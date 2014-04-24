@@ -10,25 +10,34 @@
 
 @implementation TAAsyncCallback
 
-- (void)launch {
+- (instancetype)init {
+  NSLog(@"init");
+  return [super init];
+}
+
+- (void)registerNotification {
   NSNotificationCenter *nsCenter = [NSNotificationCenter defaultCenter];
   [nsCenter addObserver:self
                selector:@selector(theCallback)
                    name:@"notif"
                  object:nil];
+}
 
-  NSLog(@"Leaving launch");
+- (void)unregisterNotification {
+  NSNotificationCenter *nsCenter = [NSNotificationCenter defaultCenter];
+  [nsCenter removeObserver:self name:@"notif" object:nil];
 }
 
 - (void)theCallback {
   NSLog(@"Called back");
+  if (self.callback) {
+    self.callback();
+  }
 }
 
 - (void)dealloc {
   NSLog(@"Dealloc");
-
-  NSNotificationCenter *nsCenter = [NSNotificationCenter defaultCenter];
-  [nsCenter removeObserver:self name:@"notif" object:nil];
+  [self unregisterNotification];
 }
 
 @end

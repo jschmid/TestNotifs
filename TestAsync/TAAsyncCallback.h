@@ -10,6 +10,8 @@
 
 @interface TAAsyncCallback : NSObject
 
-- (void)launch;
+@property(copy) void (^callback)(void);
+
+- (void)registerNotification;
 
 @end

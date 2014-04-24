@@ -10,26 +10,30 @@
 #import "TAAsyncCallback.h"
 
 @interface TAViewController ()
-
+@property TAAsyncCallback *asyncProperty;
 @end
 
 @implementation TAViewController {
 @private
-  TAAsyncCallback *_async;
-}
-
-- (void)viewDidLoad {
-  [super viewDidLoad];
+  TAAsyncCallback *_asyncIvar;
 }
 
 - (IBAction)localClick:(id)sender {
-  TAAsyncCallback *async = [TAAsyncCallback new];
-  [async launch];
+  TAAsyncCallback *asyncLocal = [TAAsyncCallback new];
+  [asyncLocal registerNotification];
 }
 
-- (IBAction)globalClick:(id)sender {
-  _async = [TAAsyncCallback new];
-  [_async launch];
+- (IBAction)ivarClick:(id)sender {
+  _asyncIvar = [TAAsyncCallback new];
+  _asyncIvar.callback = ^{ _asyncIvar = nil; };
+  [_asyncIvar registerNotification];
+}
+
+- (IBAction)propertyClick:(id)sender {
+  self.asyncProperty = [TAAsyncCallback new];
+  __weak TAViewController *weakSelf = self;
+  self.asyncProperty.callback = ^{ weakSelf.asyncProperty = nil; };
+  [self.asyncProperty registerNotification];
 }
 
 - (IBAction)sendClick:(id)sender {
