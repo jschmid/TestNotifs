@@ -8,6 +8,7 @@
 
 #import "TAViewController.h"
 #import "TAAsyncCallback.h"
+#import "TAAsyncOperation.h"
 
 @interface TAViewController ()
 @property TAAsyncCallback *asyncProperty;
@@ -34,6 +35,12 @@
   __weak TAViewController *weakSelf = self;
   self.asyncProperty.callback = ^{ weakSelf.asyncProperty = nil; };
   [self.asyncProperty registerNotification];
+}
+
+- (IBAction)operationClick:(id)sender {
+  TAAsyncOperation *asyncOperation = [TAAsyncOperation new];
+  asyncOperation.completionBlock = ^{ NSLog(@"Completed"); };
+  [asyncOperation start];
 }
 
 - (IBAction)sendClick:(id)sender {

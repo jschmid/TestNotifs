@@ -20,6 +20,7 @@
 		DD4DB1671909490400BCAF9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4DB1461909490400BCAF9C /* Foundation.framework */; };
 		DD4DB1681909490400BCAF9C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4DB14A1909490400BCAF9C /* UIKit.framework */; };
 		DD4DB17D1909491E00BCAF9C /* TAAsyncCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4DB17C1909491E00BCAF9C /* TAAsyncCallback.m */; };
+		DD4DB180190A340B00BCAF9C /* TAAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4DB17F190A340B00BCAF9C /* TAAsyncOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		DD4DB1651909490400BCAF9C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DD4DB17B1909491E00BCAF9C /* TAAsyncCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAsyncCallback.h; sourceTree = "<group>"; };
 		DD4DB17C1909491E00BCAF9C /* TAAsyncCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAsyncCallback.m; sourceTree = "<group>"; };
+		DD4DB17E190A340B00BCAF9C /* TAAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAsyncOperation.h; sourceTree = "<group>"; };
+		DD4DB17F190A340B00BCAF9C /* TAAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAsyncOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				DD4DB15C1909490400BCAF9C /* TAViewController.m */,
 				DD4DB17B1909491E00BCAF9C /* TAAsyncCallback.h */,
 				DD4DB17C1909491E00BCAF9C /* TAAsyncCallback.m */,
+				DD4DB17E190A340B00BCAF9C /* TAAsyncOperation.h */,
+				DD4DB17F190A340B00BCAF9C /* TAAsyncOperation.m */,
 				DD4DB15E1909490400BCAF9C /* Images.xcassets */,
 				DD4DB14D1909490400BCAF9C /* Supporting Files */,
 			);
@@ -232,6 +237,7 @@
 			files = (
 				DD4DB17D1909491E00BCAF9C /* TAAsyncCallback.m in Sources */,
 				DD4DB15D1909490400BCAF9C /* TAViewController.m in Sources */,
+				DD4DB180190A340B00BCAF9C /* TAAsyncOperation.m in Sources */,
 				DD4DB1531909490400BCAF9C /* main.m in Sources */,
 				DD4DB1571909490400BCAF9C /* TAAppDelegate.m in Sources */,
 			);
@@ -429,6 +435,7 @@
 				DD4DB1771909490400BCAF9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD4DB1781909490400BCAF9C /* Build configuration list for PBXNativeTarget "TestAsyncTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +444,7 @@
 				DD4DB17A1909490400BCAF9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
