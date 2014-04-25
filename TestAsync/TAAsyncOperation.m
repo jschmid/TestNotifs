@@ -75,6 +75,11 @@
   _self = nil;
 }
 
+- (void)cancel {
+  [self finish];
+  [super cancel];
+}
+
 - (void)theCallback {
   NSLog(@"Called back");
   dispatch_async(_syncQueue, ^{ [self finish]; });
