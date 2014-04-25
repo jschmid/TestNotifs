@@ -8,6 +8,9 @@
 
 #import "TAAsyncOperation.h"
 
+// Example from:
+// http://codereview.stackexchange.com/questions/36632/canonical-implementation-of-a-subclass-of-nsoperation
+
 @implementation TAAsyncOperation {
 @private
   BOOL _isExecuting;
